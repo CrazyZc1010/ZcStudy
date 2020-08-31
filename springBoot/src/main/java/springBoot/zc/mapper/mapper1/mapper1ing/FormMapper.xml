@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="springBoot.zc.mapper.mapper1.FormMapper">
+
+<!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="springBoot.zc.entity.Form">
+        <id column="form_id" property="formId" />
+        <result column="form_title" property="formTitle" />
+        <result column="form_type" property="formType" />
+        <result column="page_info" property="pageInfo" />
+        <result column="table_sql" property="tableSql" />
+        <result column="tenant_id" property="tenantId" />
+        <result column="catalog_id" property="catalogId" />
+        <result column="create_date" property="createDate" />
+        <result column="modified_date" property="modifiedDate" />
+        <result column="create_user" property="createUser" />
+        <result column="del_flag" property="delFlag" />
+        <result column="place_type" property="placeType" />
+        <result column="publish_flag" property="publishFlag" />
+        <result column="bind_flag" property="bindFlag" />
+        <result column="start_form" property="startForm" />
+        <result column="process_def_id" property="processDefId" />
+        <result column="process_def_name" property="processDefName" />
+        <result column="activity_def_id" property="activityDefId" />
+        <result column="activity_def_name" property="activityDefName" />
+        <result column="form_tb_name" property="formTbName" />
+        <result column="reassign_flag" property="reassignFlag" />
+        <result column="copy_to_flag" property="copyToFlag" />
+        <result column="sub_process_flag" property="subProcessFlag" />
+        <result column="sub_process_id" property="subProcessId" />
+        <result column="table_column" property="tableColumn" />
+    </resultMap>
+
+	<select id="selectForm" resultType="java.lang.Integer">
+		select count(*) from form
+	</select>
+
+</mapper>

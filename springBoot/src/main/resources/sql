@@ -1,0 +1,6 @@
+CREATE TABLE `form` (
+  `form_id` INT(11) NOT NULL AUTO_INCREMENT COMMENT '表单编号，主键，唯一标识一个表单',
+  `form_title` VARCHAR(255) COLLATE utf8_bin DEFAULT NULL COMMENT '表单名称，标题',
+  `form_type` VARCHAR(2) COLLATE utf8_bin DEFAULT '1' COMMENT '表单类型  1为新增 2为流程中',
+  PRIMARY KEY (`form_id`) USING BTREE
+)

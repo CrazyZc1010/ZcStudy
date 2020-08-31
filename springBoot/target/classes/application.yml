@@ -1,0 +1,18 @@
+server:
+  port: 8089
+  servlet:
+    context-path: /test
+
+spring:
+  datasource:
+    test1:
+      jdbc-url: jdbc:mysql://127.0.0.1:3306/zc?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2b8&useSSL=false
+      driver-class-name: com.mysql.jdbc.Driver
+      username: root
+      password: zcroot
+    test2:
+      jdbc-url: jdbc:mysql://127.0.0.1:3306/wo_mail?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2b8&useSSL=false
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      username: root
+      password: zcroot
+ 
