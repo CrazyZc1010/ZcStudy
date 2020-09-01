@@ -13,6 +13,11 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
+/**
+ * sqlSessionFactoryRef：指定SqlSessionFactoryBean对象名
+ * @author zc
+ *
+ */
 
 @Configuration
 @MapperScan(basePackages = "springboot.zc.mapper.mapper1", sqlSessionFactoryRef = "test1SqlSessionFactory")
@@ -36,6 +41,7 @@ public class DataSourceConfig1 {
     public SqlSessionFactory test1SqlSessionFactory(@Qualifier("test1DataSource") DataSource datasource)
             throws Exception
     {
+    	//SqlSessionFactoryBean是生产SqlSessionFactory的一种工厂bean。
         SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
         bean.setDataSource(datasource);
         bean.setMapperLocations(
@@ -46,6 +52,7 @@ public class DataSourceConfig1 {
  
     @Bean("test1SqlSessionTemplate")
     // 表示这个数据源是默认数据源
+    // SqlSessionTemplate是SqlSession的一个具体实现。
     @Primary
     public SqlSessionTemplate test1SqlSessionTemplate(
             @Qualifier("test1SqlSessionFactory") SqlSessionFactory sessionFactory)
